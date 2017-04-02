@@ -53,4 +53,4 @@ If you have any questions, found bugs, or ideas, please open a ticket (issue).
 
 #### License
 
-This project is licensed under the terms of the [MIT license](license.md).
+This project is licensed under the terms of the [MIT license](https://husniadil.mit-license.org/).

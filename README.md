@@ -37,7 +37,7 @@ make test
 ```
 
 #### Implemented Features
-- [ ] Get all brands
+- [x] Get all brands
 - [ ] Get devices by brand
 - [ ] Get device specification
 - [ ] Find devices by keyword

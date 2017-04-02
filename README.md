@@ -38,10 +38,15 @@ make test
 
 #### Implemented Features
 - [x] Get all brands
-- [ ] Get devices by brand
+- [x] Get devices by brand
 - [ ] Get device specification
 - [ ] Find devices by keyword
 - [ ] Find devices by advanced filters
+
+
+#### API Docs
+- [ ] Create API documentation
+
 
 ---
 

@@ -33,9 +33,14 @@ func getID(s *goquery.Selection) (id int, err error) {
 	}
 
 	tmpID := strings.Split(slug, "-")
-	tmpID2 := tmpID[len(tmpID)-1]
+	lastIndex := len(tmpID) - 1
+	tmpID2 := tmpID[lastIndex]
 
 	id, err = strconv.Atoi(tmpID2)
+
+	if err != nil {
+		err = errors.New("Cannot resolve id")
+	}
 
 	return
 }
@@ -68,13 +73,13 @@ func newBrand(s *goquery.Selection) (brand Brand, err error) {
 		return
 	}
 
-	slug, err := getSlug(s)
+	name, err := getName(s)
 
 	if err != nil {
 		return
 	}
 
-	name, err := getName(s)
+	slug, err := getSlug(s)
 
 	if err != nil {
 		return

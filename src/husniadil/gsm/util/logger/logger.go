@@ -4,6 +4,7 @@ import (
 	"github.com/fatih/color"
 	"os"
 	"time"
+	"fmt"
 )
 
 func prependArgs(elem interface{}, a ...interface{}) []interface{} {
@@ -15,7 +16,7 @@ func getNow() string {
 }
 
 func withTime(pattern string, a ...interface{}) (newPattern string, newParams []interface{}) {
-	newPattern = "[%s] " + pattern + "\n"
+	newPattern = fmt.Sprintf("[%%s] %s\n", pattern)
 	newParams = prependArgs(getNow(), a...)
 	return
 }

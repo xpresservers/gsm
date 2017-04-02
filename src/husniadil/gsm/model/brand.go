@@ -1,4 +1,4 @@
-package brand
+package model
 
 type Brand struct {
 	ID              int    `json:"id,omitempty"`

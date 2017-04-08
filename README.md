@@ -11,30 +11,29 @@ The API basically reads from GSMArena website and results JSON data.
 - [GNU Make](https://www.gnu.org/software/make/)
 
 
-#### Setup
+#### Quick Start
 ```bash
-# setup (one time only)
+# setup dependencies (you should run this once before compiling/running the app)
 make setup
+
+# compile and run the app
+make serve
 ```
 
-#### Build
 
-```bash
-# build binary
-make build
+#### Available commands
+
+```
+Task                 : Description
+-------------------- : --------------------------------------------
+make setup           : Install all necessary dependencies
+make build           : Generate production build for current OS
+make test            : Run tests
+make serve           : Run the app locally
+make image           : Create docker image
+make run-image       : Run the app on docker
 ```
 
-#### Run
-```bash
-# run the binary
-bin/gsm
-```
-
-#### Test
-```bash
-# test all functionality
-make test
-```
 
 #### Implemented Features
 - [x] Get all brands
@@ -50,10 +49,25 @@ make test
 
 ---
 
+
 #### Contribution
-Please create a pull request after forking this project.
+If you want to contribute code, please consider creating a pull request after forking this project.
 
 If you have any questions, found bugs, or ideas, please open a ticket (issue).
+
+
+---
+
+
+#### Credits
+- [github.com/constabulary/gb](github.com/constabulary/gb)
+- [github.com/PuerkitoBio/goquery](github.com/PuerkitoBio/goquery)
+- [github.com/fatih/color](github.com/fatih/color)
+- [github.com/gorilla/mux](github.com/gorilla/mux)
+- [github.com/justinas/alice](github.com/justinas/alice)
+
+
+---
 
 
 #### License

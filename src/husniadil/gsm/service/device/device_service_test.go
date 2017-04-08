@@ -3,8 +3,8 @@ package device
 import (
 	"testing"
 
-	assertion "husniadil/gsm/util/testing"
 	"husniadil/gsm/service/brand"
+	assertion "husniadil/gsm/util/testing"
 )
 
 func TestGetDeviceList(t *testing.T) {
@@ -17,7 +17,7 @@ func TestGetDeviceList(t *testing.T) {
 	acerTotalDevices := brands[0].NumberOfDevices
 	perPage := 40
 	totalPage := acerTotalDevices / perPage
-	if acerTotalDevices % perPage > 0 {
+	if acerTotalDevices%perPage > 0 {
 		totalPage = totalPage + 1
 	}
 

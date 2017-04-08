@@ -1,9 +1,8 @@
 package brand
 
 import (
-	"testing"
-
 	assertion "husniadil/gsm/util/testing"
+	"testing"
 )
 
 func TestGetAllBrands(t *testing.T) {

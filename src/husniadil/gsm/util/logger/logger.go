@@ -1,10 +1,11 @@
 package logger
 
 import (
-	"github.com/fatih/color"
+	"fmt"
 	"os"
 	"time"
-	"fmt"
+
+	"github.com/fatih/color"
 )
 
 func prependArgs(elem interface{}, a ...interface{}) []interface{} {

@@ -2,11 +2,10 @@ package brand
 
 import (
 	"errors"
-	"strconv"
-	"strings"
-
 	. "husniadil/gsm/model/brand"
 	web_scraper "husniadil/gsm/util/scraper"
+	"strconv"
+	"strings"
 
 	"github.com/PuerkitoBio/goquery"
 )

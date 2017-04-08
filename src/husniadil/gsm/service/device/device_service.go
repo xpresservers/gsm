@@ -2,10 +2,9 @@ package device
 
 import (
 	"errors"
+	"fmt"
 	. "husniadil/gsm/model/device"
 	web_scraper "husniadil/gsm/util/scraper"
-
-	"fmt"
 	"strconv"
 	"strings"
 

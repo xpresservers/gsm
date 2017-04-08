@@ -1,10 +1,9 @@
 package server
 
 import (
+	"husniadil/gsm/handler"
 	"husniadil/gsm/util/logger"
 	"net/http"
-
-	"husniadil/gsm/handler"
 
 	"github.com/justinas/alice"
 )

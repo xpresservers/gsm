@@ -3,10 +3,11 @@ package scraper
 import (
 	"errors"
 	"fmt"
-	"github.com/PuerkitoBio/goquery"
-	"golang.org/x/net/html"
 	"net/http"
 	"time"
+
+	"github.com/PuerkitoBio/goquery"
+	"golang.org/x/net/html"
 )
 
 const DefaultTimeout = 10 * time.Second

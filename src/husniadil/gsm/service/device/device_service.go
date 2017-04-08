@@ -89,7 +89,7 @@ func getImage(s *goquery.Selection) (image string, err error) {
 }
 
 func getName(s *goquery.Selection) (name string, err error) {
-	span := s.Find("span").Eq(0)
+	span := s.Find("span")
 
 	if span == nil {
 		err = errors.New("Cannot resolve name")
@@ -132,8 +132,8 @@ func max(slice []int) int {
 }
 
 func newDevice(s *goquery.Selection) (device Device, err error) {
-	img := s.Find("img").Eq(0)
-	strong := s.Find("strong").Eq(0)
+	img := s.Find("img")
+	strong := s.Find("strong")
 
 	id, err := getID(s)
 

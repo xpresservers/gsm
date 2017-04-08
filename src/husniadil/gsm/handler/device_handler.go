@@ -6,10 +6,13 @@ import (
 	. "husniadil/gsm/util/response"
 	"net/http"
 	"strconv"
+
+	"github.com/gorilla/mux"
 )
 
 func GetDeviceList(w http.ResponseWriter, req *http.Request) {
-	slug := req.URL.Query().Get("slug")
+	vars := mux.Vars(req)
+	slug := vars["slug"]
 	strPage := req.URL.Query().Get("page")
 
 	page := 1

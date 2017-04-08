@@ -2,7 +2,7 @@ package device
 
 import (
 	"errors"
-	. "husniadil/gsm/model"
+	. "husniadil/gsm/model/device"
 	web_scraper "husniadil/gsm/util/scraper"
 
 	"fmt"

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	. "husniadil/gsm/model"
+	. "husniadil/gsm/model/brand"
 	web_scraper "husniadil/gsm/util/scraper"
 
 	"github.com/PuerkitoBio/goquery"

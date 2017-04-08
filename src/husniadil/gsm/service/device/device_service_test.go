@@ -7,7 +7,8 @@ import (
 	"husniadil/gsm/service/brand"
 )
 
-func TestGetAllBrands(t *testing.T) {
+func TestGetDeviceList(t *testing.T) {
+	// get all brands first to get a slug
 	brands, err := brand.GetAllBrands()
 	if err != nil {
 		assertion.AssertFailedLog(t, "Failed to get brands")
@@ -20,10 +21,11 @@ func TestGetAllBrands(t *testing.T) {
 		totalPage = totalPage + 1
 	}
 
+	// get device list
 	devices, err := GetDeviceList("acer-phones-59", totalPage)
 
 	if err != nil {
-		assertion.AssertFailedLog(t, "Failed to get brands")
+		assertion.AssertFailedLog(t, "Failed to get device list")
 	}
 
 	oldestDevice := devices.Items[len(devices.Items)-1]

@@ -3,11 +3,13 @@
 usage:
 	@echo ""
 	@echo "Task                 : Description"
-	@echo "-----------------    : -------------------"
+	@echo "-------------------- : --------------------------------------------"
 	@echo "make setup           : Install all necessary dependencies"
 	@echo "make build           : Generate production build for current OS"
 	@echo "make test            : Run tests"
-	@echo "make restore-vendors : Fetch dependencies to the vendor / directory"
+	@echo "make serve           : Run the app locally"
+	@echo "make image           : Create docker image"
+	@echo "make run-image       : Run the app on docker"
 	@echo ""
 
 build:
@@ -16,8 +18,10 @@ build:
 test:
 	gb test
 
-serve:
-	gb build
+image:
+	docker build -t husniadil/gsm .
+
+run:
 	bin/gsm
 
 dev-deps:
@@ -27,3 +31,8 @@ restore-vendors:
 	gb vendor restore
 
 setup: dev-deps restore-vendors
+
+serve: build run
+
+run-image:
+	docker run -it --rm -p 8080:8080 husniadil/gsm

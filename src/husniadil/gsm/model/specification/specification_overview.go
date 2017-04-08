@@ -1,7 +1,11 @@
 package specification
 
+type SpecificationOverviewPopularity struct {
+	Percentage string `json:"percentage,omitempty"`
+	Hits       string `json:"hits,omitempty"`
+}
+
 type SpecificationOverviewGeneralInfo struct {
-	Type     string `json:"type,omitempty"`
 	Launched string `json:"launched,omitempty"`
 	Body     string `json:"body,omitempty"`
 	OS       string `json:"os,omitempty"`

@@ -48,10 +48,9 @@ func getImageURL(s *goquery.Selection) (imageURL string, err error) {
 
 func getDeviceType(s *goquery.Document) string {
 	documentTitle := s.Find("title").Text()
-
 	var deviceType string
 
-	if strings.Contains(documentTitle, Phone) {
+	if strings.Contains(strings.ToLower(documentTitle), strings.ToLower(Phone)) {
 		deviceType = Phone
 	} else {
 		deviceType = Tablet

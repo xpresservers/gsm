@@ -44,15 +44,11 @@ make clean           : Remove dependencies and compiled files
 - [ ] Find devices by advanced filters
 
 
-#### API Docs
-- [ ] Create API documentation
-
-
 #### Demo
-Demo server built on Apr 9, 2017 at 12:15am. Not all features has been implemented yet.
-- [Get all brands](https://gsm-wcavkgnhzr.now.sh/brands)
-- [Get Samsung devices](https://gsm-wcavkgnhzr.now.sh/devices/samsung-phones-9)
-- [Get Samsung Galaxy S8 specification](https://gsm-wcavkgnhzr.now.sh/specs/samsung_galaxy_s8-8161)
+Demo server built on Apr 9, 2017 at 2:02pm. Not all features has been implemented yet.
+- [Get all brands](https://gsmarena-ciaqxkwrcz.now.sh/brands)
+- [Get Samsung devices](https://gsmarena-ciaqxkwrcz.now.sh/devices/samsung-phones-9)
+- [Get Samsung Galaxy S8 specification](https://gsmarena-ciaqxkwrcz.now.sh/specs/samsung_galaxy_s8-8161)
 
 
 ---

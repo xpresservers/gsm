@@ -11,7 +11,7 @@ func createRouter() *mux.Router {
 
 	router.HandleFunc("/brands", GetAllBrands)
 	router.HandleFunc("/devices/{slug:[a-z0-9\\-_]+}", GetDeviceList)
-	router.HandleFunc("/specs/{slug:[a-z0-9\\-_]+}", GetSpecification)
+	router.HandleFunc("/specs/{slug:[a-z0-9\\-_+%]+}", GetSpecification)
 
 	return router
 }

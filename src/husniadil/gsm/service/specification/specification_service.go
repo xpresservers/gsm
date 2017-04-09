@@ -4,6 +4,7 @@ import (
 	"errors"
 	"fmt"
 	. "husniadil/gsm/model/specification"
+	"husniadil/gsm/util/prettifier"
 	web_scraper "husniadil/gsm/util/scraper"
 	"strings"
 
@@ -147,12 +148,31 @@ func getSpecificationOverview(s *goquery.Selection) (specificationOverview Speci
 	return
 }
 
-func getSpecificationDetail(s *goquery.Selection) (specificationDetail SpecificationDetail, err error) {
-	// TODO: complete this
-
+func getSpecificationDetail(s *goquery.Selection) (specificationDetail SpecificationDetail) {
 	specificationDetail = SpecificationDetail{}
+	tableSelector := s.Find("table")
+	for i := 0; i < tableSelector.Length(); i++ {
+		categorySelector := tableSelector.Eq(i).Find("th")
+		for j := 0; j < categorySelector.Length(); j++ {
+			// get category
+			currentCategory := categorySelector.Eq(j)
+			category := prettifier.PrettifyKey(strings.TrimSpace(currentCategory.Text()))
 
-	err = nil
+			// get top title-value pair
+			title := prettifier.PrettifyKey(strings.TrimSpace(currentCategory.Siblings().Eq(0).Text()))
+			value := prettifier.PrettifyValue(currentCategory.Siblings().Eq(0).Next().Text())
+			specificationDetail[category] = map[string]interface{}{}
+			specificationDetail[category][title] = value
+
+			// get next title-value pair
+			nextItems := categorySelector.Parent().Siblings()
+			for k := 0; k < nextItems.Length(); k++ {
+				title := prettifier.PrettifyKey(strings.TrimSpace(nextItems.Eq(k).Find(".ttl").Text()))
+				value := prettifier.PrettifyValue(nextItems.Eq(k).Find(".nfo").Text())
+				specificationDetail[category][title] = value
+			}
+		}
+	}
 
 	return
 }
@@ -188,13 +208,9 @@ func GetSpecification(slug string) (specification Specification, err error) {
 
 	specificationOverview := getSpecificationOverview(overviewSelector)
 
-	detailSelector := document.Find(".specs-list")
+	detailSelector := document.Find("#specs-list")
 
-	specificationDetail, err := getSpecificationDetail(detailSelector)
-
-	if err != nil {
-		return
-	}
+	specificationDetail := getSpecificationDetail(detailSelector)
 
 	specification = Specification{
 		Brand:      brand,

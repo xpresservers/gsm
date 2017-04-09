@@ -24,7 +24,7 @@ make serve
 #### Available commands
 
 ```
-Task                 : Description
+Command              : Description
 -------------------- : --------------------------------------------
 make setup           : Install all necessary dependencies
 make build           : Generate production build for current OS
@@ -32,13 +32,14 @@ make test            : Run tests
 make serve           : Run the app locally
 make image           : Create docker image
 make run-image       : Run the app on docker
+make clean           : Remove dependencies and compiled files
 ```
 
 
 #### Implemented Features
 - [x] Get all brands
 - [x] Get devices by brand
-- [ ] Get device specification
+- [x] Get device specification
 - [ ] Find devices by keyword
 - [ ] Find devices by advanced filters
 
@@ -72,6 +73,8 @@ If you have any questions, found bugs, or ideas, please open a ticket (issue).
 - [github.com/fatih/color](github.com/fatih/color)
 - [github.com/gorilla/mux](github.com/gorilla/mux)
 - [github.com/justinas/alice](github.com/justinas/alice)
+- [github.com/rainycape/unidecode](github.com/rainycape/unidecode)
+- [github.com/azer/snakecase](github.com/azer/snakecase)
 
 
 ---

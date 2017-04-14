@@ -1,0 +1,11 @@
+language: go
+
+go:
+  - 1.8.x
+  - master
+
+install: make setup
+
+script:
+  - make build
+  - make test

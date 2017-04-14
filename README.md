@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/husniadil/gsm.svg?branch=master)](https://travis-ci.org/husniadil/gsm)
+
 # GSMArena API
 
 GSMArena phone specification and finder.

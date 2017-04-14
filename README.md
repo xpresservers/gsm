@@ -9,7 +9,7 @@ The API basically reads from GSMArena website and results JSON data.
 
 #### Requirements:
 
-- [Go](https://golang.org/) - Preferably version 1.8.x
+- [Go](https://golang.org/) 1.7.x or up
 - [GNU Make](https://www.gnu.org/software/make/)
 
 

@@ -44,12 +44,22 @@ make clean           : Remove dependencies and compiled files
 - [ ] Find devices by advanced filters
 
 
-#### Demo
+#### Online Demo
 Demo server built on Apr 9, 2017 at 2:02pm. Not all features has been implemented yet.
 - [Get all brands](https://gsmarena-ciaqxkwrcz.now.sh/brands)
 - [Get Samsung devices](https://gsmarena-ciaqxkwrcz.now.sh/devices/samsung-phones-9)
 - [Get Samsung Galaxy S8 specification](https://gsmarena-ciaqxkwrcz.now.sh/specs/samsung_galaxy_s8-8161)
 
+
+#### Try on Local
+* **Using Postman**
+
+  [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/555bfc6fbe025e73641e)
+
+* **Using Swagger UI**
+
+  This API doesn't have embedded Swagger UI. You may need to spawn Swagger UI docker container and use provided `swagger.json` file in this repo.
+Detail of setting up Swagger UI can be [read from here](https://github.com/swagger-api/swagger-ui).
 
 ---
 

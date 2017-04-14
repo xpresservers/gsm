@@ -1,0 +1,80 @@
+{
+	"variables": [],
+	"info": {
+		"name": "GSMArena API",
+		"_postman_id": "966eb3ea-377f-b051-5031-45949ea75cdb",
+		"description": "Find phone and specs on GSMArena using API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "brands",
+			"description": "Folder for brands",
+			"item": [
+				{
+					"name": "Get all brands",
+					"request": {
+						"url": "http://localhost:8080/brands",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "The Brands endpoint returns all brand list and summary"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "devices",
+			"description": "Folder for devices",
+			"item": [
+				{
+					"name": "Get devices from a brand",
+					"request": {
+						"url": "http://localhost:8080/devices/samsung-phones-9?page=1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get device list and summary of a brand, served with pagination"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "specs",
+			"description": "Folder for specs",
+			"item": [
+				{
+					"name": "Get device specification",
+					"request": {
+						"url": "http://localhost:8080/specs/samsung_galaxy_s8-8161",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": "Get device specification by device's slug"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

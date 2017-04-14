@@ -1,0 +1,234 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "GSMArena API",
+        "description": "Find phone and specs on GSMArena using API",
+        "version": "0.1.0"
+    },
+    "host": "localhost:8080",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/brands": {
+            "get": {
+                "summary": "Get all brands",
+                "description": "The Brands endpoint returns all brand list and summary",
+                "tags": [
+                    "Brands"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "An array of brands",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/BrandResponseModel"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/devices/{slug}": {
+            "get": {
+                "summary": "Get devices from a brand",
+                "description": "Get device list and summary of a brand, served with pagination",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Brand's slug.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Specific page to access, must be greater than zero if defined.",
+                        "required": false,
+                        "type": "number",
+                        "format": "int32"
+                    }
+                ],
+                "tags": [
+                    "Devices"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "An array of devices filtered by brand's slug",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/DeviceResponseModel"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/specs/{slug}": {
+            "get": {
+                "summary": "Get device specification",
+                "description": "Get device specification by device's slug",
+                "parameters": [
+                    {
+                        "name": "slug",
+                        "in": "path",
+                        "description": "Device's slug.",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Specs"
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Specification of a device",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/SpecificationResponseModel"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Brand": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Brand ID"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Brand's name"
+                },
+                "slug": {
+                    "type": "string",
+                    "description": "Brand's slug"
+                },
+                "number_of_devices": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Number of devices owned by this Brand"
+                }
+            }
+        },
+        "BrandResponseModel": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Brand"
+                    }
+                },
+                "error": {
+                    "type": "string"
+                }
+            }
+        },
+        "Device": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int32",
+                    "description": "Device ID"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Device's name"
+                },
+                "slug": {
+                    "type": "string",
+                    "description": "Device's slug"
+                },
+                "image": {
+                    "type": "string",
+                    "description": "Device's image"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Quick overview of the device"
+                }
+            }
+        },
+        "DeviceList": {
+            "type": "object",
+            "properties": {
+                "items": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Device"
+                    }
+                }
+            }
+        },
+        "DeviceResponseModel": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/DeviceList"
+                    }
+                },
+                "error": {
+                    "type": "string"
+                }
+            }
+        },
+        "Specification": {
+            "type": "object",
+            "properties": {
+                "brand": {
+                    "type": "string",
+                    "description": "Brand's name"
+                },
+                "device_name": {
+                    "type": "string",
+                    "description": "Device's name"
+                },
+                "device_type": {
+                    "type": "string",
+                    "description": "Device's type, whether a phone or a tablet"
+                },
+                "image_url": {
+                    "type": "string",
+                    "description": "Device's image"
+                },
+                "overview": {
+                    "type": "object",
+                    "description": "Quick overview of the device"
+                },
+                "detail": {
+                    "type": "object",
+                    "description": "Detail specification"
+                }
+            }
+        },
+        "SpecificationResponseModel": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/Specification"
+                },
+                "error": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}

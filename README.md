@@ -47,10 +47,9 @@ make clean           : Remove dependencies and compiled files
 
 
 #### Online Demo
-Demo server built on Apr 9, 2017 at 2:02pm. Not all features has been implemented yet.
-- [Get all brands](https://gsmarena-ciaqxkwrcz.now.sh/brands)
-- [Get Samsung devices](https://gsmarena-ciaqxkwrcz.now.sh/devices/samsung-phones-9)
-- [Get Samsung Galaxy S8 specification](https://gsmarena-ciaqxkwrcz.now.sh/specs/samsung_galaxy_s8-8161)
+- [Get all brands](https://gsmarena-obrisiswox.now.sh/brands)
+- [Get Samsung devices](https://gsmarena-obrisiswox.now.sh/devices/samsung-phones-9)
+- [Get Samsung Galaxy S8 specification](https://gsmarena-obrisiswox.now.sh/specs/samsung_galaxy_s8-8161)
 
 
 #### Try on Local

@@ -169,7 +169,9 @@ func getSpecificationDetail(s *goquery.Selection) (specificationDetail Specifica
 			for k := 0; k < nextItems.Length(); k++ {
 				title := prettifier.PrettifyKey(strings.TrimSpace(nextItems.Eq(k).Find(".ttl").Text()))
 				value := prettifier.PrettifyValue(nextItems.Eq(k).Find(".nfo").Text())
-				specificationDetail[category][title] = value
+				if !(title == "" && value == "") {
+					specificationDetail[category][title] = value
+				}
 			}
 		}
 	}

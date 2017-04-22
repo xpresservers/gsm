@@ -7,13 +7,8 @@ import (
 
 func TestGetAllBrands(t *testing.T) {
 	brands, err := GetAllBrands()
-
-	if err != nil {
-		assertion.AssertFailedLog(t, "Failed to get brands")
-	}
+	assertion.Assert(t, nil, err)
 
 	firstBrandName := "Acer"
-	if brands[0].Name != firstBrandName {
-		assertion.AssertFailed(t, firstBrandName, brands[0].Name)
-	}
+	assertion.Assert(t, firstBrandName, brands[0].Name)
 }

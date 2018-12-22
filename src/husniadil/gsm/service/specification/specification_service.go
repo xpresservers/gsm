@@ -38,7 +38,7 @@ func getDeviceName(s *goquery.Selection) string {
 
 func getImageURL(s *goquery.Selection) (imageURL string, err error) {
 	imageURL, imageURLExists := s.Find(".specs-photo-main").
-		Find("a").Find("img").Attr("src")
+		Find("img").Attr("src")
 
 	if !imageURLExists {
 		err = errors.New("Cannot resolve image url")
